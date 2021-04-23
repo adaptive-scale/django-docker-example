@@ -12,16 +12,16 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
-# install dependencies
-RUN pip install --upgrade pip
-ADD requirements.txt .
-RUN pip install -r requirements.txt
-
-# copy entrypoint.sh
-ADD entrypoint.sh .
-
 # copy project
 ADD . .
+
+# install dependencies
+ADD requirements.txt .
+ADD entrypoint.sh .
+RUN chmod 755 entrypoint.sh
+
+RUN RUN python -m pip install -r requirements.txt
+
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
