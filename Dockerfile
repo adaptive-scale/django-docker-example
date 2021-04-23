@@ -20,7 +20,7 @@ ADD requirements.txt .
 ADD entrypoint.sh .
 RUN chmod 755 entrypoint.sh
 
-RUN python -m pip install -r requirements.txt
+RUN . venv/bin/activate && python -m pip install -r requirements.txt
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
