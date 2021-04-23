@@ -16,4 +16,4 @@ RUN chmod 755 entrypoint.sh
 RUN python -m pip install -r requirements.txt
 
 # run entrypoint.sh
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "/usr/src/app/entrypoint.sh"]
