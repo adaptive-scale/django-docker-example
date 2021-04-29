@@ -23,7 +23,7 @@ layout:
         SQL_PASSWORD: Password123
         SQL_ENGINE: django.db.backends.postgresql
         SQL_DATABASE: demo-db
-        DJANGO_ALLOWED_HOSTS: "*"
+        DJANGO_ALLOWED_HOSTS: "test122-qobu4fqc5ftw0is3v6zp2yv5.app.autonomic.sh"
         SECRET_KEY: "some secret"
       capacity:
         memory: "200Mi"
